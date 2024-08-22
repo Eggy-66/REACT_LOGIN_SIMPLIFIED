@@ -113,6 +113,35 @@ async def get_users(db: Session = Depends(get_db)):
         }
         for user in users
     ]
+
+@app.put("/users/{username}")
+async def update_user(username: str, user: UserCreate, db: Session = Depends(get_db)):
+    db_user = db.query(models.User).filter(models.User.username == username).first()
+    if not db_user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    db_user.username = user.username
+    db_user.email = user.email
+    db_user.name = user.name
+    db_user.lastname = user.lastname
+    if user.password:
+        db_user.password = bcrypt.hashpw(user.password.encode('utf-8'), bcrypt.gensalt())
+
+    db.commit()
+    db.refresh(db_user)
+    return {"message": "User updated successfully"}
+
+@app.delete("/users/{username}")
+async def delete_user(username: str, db: Session = Depends(get_db)):
+    db_user = db.query(models.User).filter(models.User.username == username).first()
+    if not db_user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    db.delete(db_user)
+    db.commit()
+    return {"message": "User deleted successfully"}
+
+
 @app.get('/')
 async def check():
     return 'hello'
