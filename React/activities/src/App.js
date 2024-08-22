@@ -22,12 +22,20 @@ const AppContent = () => {
         <div className='container'>
           <div>Hello, {user ? user.username : 'User'}</div>
           <div>
-            <h1>Some content</h1>
+            <h1>-=-=-=-=-</h1>
             <h2>Registered Users:</h2>
             <ul>
-              {users.map((u) => (
-                <li key={u.username}>{u.username}</li>
-              ))}
+            <ul>
+  {users.map((u) => (
+    <li key={u.username}>
+      <div><strong>Username:</strong> {u.username}</div>
+      <div><strong>Firstname:</strong> {u.name}</div>
+      <div><strong>Lastname:</strong> {u.lastname}</div>
+      <div><strong>Email:</strong> {u.email}</div>
+      <div><strong>Password:</strong> hidden {u.password}</div>
+    </li>
+  ))}
+</ul>
             </ul>
           </div>
           <button onClick={handleLogout}>Logout</button>

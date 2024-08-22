@@ -103,8 +103,16 @@ async def get_user(username: str = Depends(get_current_user)):
 @app.get("/users/")
 async def get_users(db: Session = Depends(get_db)):
     users = db.query(models.User).all()
-    return users
-
+    return [
+        {
+            "username": user.username,
+            "email": user.email,
+            "firstname": user.firstname,
+            "lastname": user.lastname,
+            "password": user.password.decode('utf-8')  # Assuming password is stored as bytes
+        }
+        for user in users
+    ]
 @app.get('/')
 async def check():
     return 'hello'

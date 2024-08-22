@@ -68,12 +68,12 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/users/');
-      setUsers(response.data);
+        const response = await axios.get('http://127.0.0.1:8000/users/');
+        setUsers(response.data);
     } catch (error) {
-      console.error('Failed to fetch users:', error);
+        console.error('Failed to fetch users:', error);
     }
-  };
+};
 
   useEffect(() => {
     if (isAuthenticated) {
