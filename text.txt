@@ -1,0 +1,3 @@
+FastAPI-  uvicorn main:app --reload
+
+react/activities -  npm start

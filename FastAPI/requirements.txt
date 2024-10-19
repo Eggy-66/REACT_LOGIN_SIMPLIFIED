@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+axios
+jose
+react
+
+sqlalchemy
+bcrypt
+pyjwt
+pydantic

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
-import { AuthProvider, useAuth } from './context/AuthContext'; // Adjust path if necessary
+import { AuthProvider, useAuth } from './context/AuthContext'; 
 import axios from 'axios';
 
 const AppContent = () => {
@@ -96,7 +96,7 @@ const AppContent = () => {
                   ) : (
                     <div>
                       <div><strong>Username:</strong> {u.username}</div>
-                      <div><strong>Firstname:</strong> {u.firstname}</div>
+                      <div><strong>Firstname:</strong> {u.name}</div>
                       <div><strong>Lastname:</strong> {u.lastname}</div>
                       <div><strong>Email:</strong> {u.email}</div>
                       <button onClick={() => handleEditClick(u)}>Edit</button>

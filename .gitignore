@@ -1,0 +1,65 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# ESLint cache
+.eslintcache
+
+# Optional npm cache directory
+.npm
+
+# Parcel-bundler cache (if using Parcel)
+.cache
+
+# Next.js (if using Next.js)
+.next
+out
+
+# SvelteKit (if using SvelteKit)
+.svelte-kit
+/.vercel
+
+# Storybook files
+out/
+
+# Static files
+/static

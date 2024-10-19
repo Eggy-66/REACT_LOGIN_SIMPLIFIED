@@ -9,7 +9,7 @@ import jwt
 from datetime import datetime, timedelta
 from fastapi.middleware.cors import CORSMiddleware
 
-SECRET_KEY = "your_secret_key"  # Replace with a strong secret key
+SECRET_KEY = "your_secret_key" 
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 1
 
